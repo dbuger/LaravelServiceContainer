@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BrandController;
+use App\Http\Controllers\CarController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -24,3 +25,12 @@ Route::prefix('brands')->group(function () {
     Route::get('/{id}', [BrandController::class, 'find'])->where('id', '[0-9]+');
     Route::delete('/{id}', [BrandController::class, 'delete'])->where('id', '[0-9]+');
 });
+
+Route::prefix('cars')->group(function () {
+    Route::get('/', [CarController::class, 'all']);
+    Route::post('/', [CarController::class, 'save']);
+    Route::get('/{id}', [CarController::class, 'find'])->where('id', '[0-9]+');
+    Route::get('/get-brand/{id}', [CarController::class, 'getBrand'])->where('id', '[0-9]+');
+    Route::delete('/{id}', [CarController::class, 'delete'])->where('id', '[0-9]+');
+});
+

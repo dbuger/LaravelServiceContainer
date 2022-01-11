@@ -2,9 +2,11 @@
 
 namespace App\Repository\Interfaces;
 
+use App\Models\Brand;
+use App\Models\Car;
 use App\Repository\Interfaces\IBaseRepository;
 use Illuminate\Database\Eloquent\Model;
 
-interface IBrandRepository extends IBaseRepository
+interface ICarRepository extends IBaseRepository
 {
 }
